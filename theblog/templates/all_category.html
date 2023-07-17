@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <h1>All Categories</h1>
+  <ul>
+    {% for category in object_list %}
+      <li>
+        <a href="{% url 'category' category.category|slugify %}">{{ category.category }}</a> ({{ category.total }})
+      </li>
+    {% endfor %}
+  </ul>
+{% endblock %}
+
+
